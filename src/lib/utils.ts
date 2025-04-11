@@ -92,4 +92,16 @@ export const formatters: { [key: string]: any } = {
     }).format(number)
     return `${formattedNumber}M`
   },
+  
+  number: ({
+    number,
+    maxFractionDigits = 2,
+  }: {
+    number: number
+    maxFractionDigits?: number
+  }) =>
+    new Intl.NumberFormat("en-US", {
+      style: "decimal",
+      maximumFractionDigits: maxFractionDigits,
+    }).format(number),
 }

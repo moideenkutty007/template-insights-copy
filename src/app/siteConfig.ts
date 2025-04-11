@@ -1,9 +1,16 @@
 export const siteConfig = {
-  name: "Insights",
-  url: "https://insights.tremor.so",
-  description: "The only reporting and audit dashboard you will ever need.",
+  name: "Value Added Vault",
+  url: "https://valueaddedvault.com",
+  description: "Insights into team activity, capacity, efficiency, and profitability",
   baseLinks: {
-    reports: "/reports",
+    dashboard: "/",
+    reports: {
+      main: "/reports",
+      teamActivity: "/reports/team-activity",
+      capacity: "/reports/capacity",
+      employeeEfficiency: "/reports/employee-efficiency",
+      profitability: "/reports/profitability",
+    },
     transactions: "/transactions",
     settings: {
       audit: "/settings/audit",
