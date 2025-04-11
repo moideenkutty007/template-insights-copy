@@ -11,12 +11,27 @@ import {
 } from "@/components/Drawer"
 import { cx, focusRing } from "@/lib/utils"
 
-import { BarChartBig, Compass, Menu, Settings2, Table2 } from "lucide-react"
+import { 
+  BarChartBig, 
+  Compass, 
+  Menu, 
+  Settings2, 
+  Table2,
+  Users,
+  LayoutDashboard,
+  Clock,
+  UserRound,
+  DollarSign
+} from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 const navigation = [
-  { name: "Reports", href: siteConfig.baseLinks.reports, icon: BarChartBig },
+  { name: "Dashboard", href: siteConfig.baseLinks.dashboard, icon: LayoutDashboard },
+  { name: "Team Activity", href: siteConfig.baseLinks.reports.teamActivity, icon: Clock },
+  { name: "Capacity Management", href: siteConfig.baseLinks.reports.capacity, icon: Users },
+  { name: "Employee Efficiency", href: siteConfig.baseLinks.reports.employeeEfficiency, icon: UserRound },
+  { name: "Project Profitability", href: siteConfig.baseLinks.reports.profitability, icon: DollarSign },
   {
     name: "Transactions",
     href: siteConfig.baseLinks.transactions,
@@ -51,7 +66,7 @@ export default function MobileSidebar() {
         </DrawerTrigger>
         <DrawerContent className="sm:max-w-lg">
           <DrawerHeader>
-            <DrawerTitle>Acme Corp.</DrawerTitle>
+            <DrawerTitle>Value Added Vault</DrawerTitle>
           </DrawerHeader>
           <DrawerBody>
             <nav

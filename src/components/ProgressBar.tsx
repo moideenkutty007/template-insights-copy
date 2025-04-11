@@ -78,6 +78,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
           aria-label="progress bar"
           aria-valuenow={value}
           aria-valuemax={max}
+          data-max={max}
         >
           <div
             className={cx(

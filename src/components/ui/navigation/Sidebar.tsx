@@ -9,6 +9,11 @@ import {
   PanelRightOpen,
   Settings2,
   Table2,
+  Users,
+  LayoutDashboard,
+  Clock,
+  UserRound,
+  DollarSign
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -16,7 +21,11 @@ import MobileSidebar from "./MobileSidebar"
 import { UserProfileDesktop, UserProfileMobile } from "./UserProfile"
 
 const navigation = [
-  { name: "Reports", href: siteConfig.baseLinks.reports, icon: BarChartBig },
+  { name: "Dashboard", href: siteConfig.baseLinks.dashboard, icon: LayoutDashboard },
+  { name: "Team Activity", href: siteConfig.baseLinks.reports.teamActivity, icon: Clock },
+  { name: "Capacity Management", href: siteConfig.baseLinks.reports.capacity, icon: Users },
+  { name: "Employee Efficiency", href: siteConfig.baseLinks.reports.employeeEfficiency, icon: UserRound },
+  { name: "Project Profitability", href: siteConfig.baseLinks.reports.profitability, icon: DollarSign },
   {
     name: "Transactions",
     href: siteConfig.baseLinks.transactions,
@@ -78,7 +87,7 @@ export function Sidebar({ isCollapsed, toggleSidebar }: SidebarProps) {
                 )}
               >
                 <a aria-label="Home Link" href="/">
-                  Acme Corp.
+                  Value Added Vault
                 </a>
               </span>
             </div>
@@ -215,7 +224,7 @@ export function Sidebar({ isCollapsed, toggleSidebar }: SidebarProps) {
           )}
         >
           <a aria-label="Home Link" href="/">
-            Acme Corp.
+            Value Added Vault
           </a>
         </span>
         <div className="flex items-center gap-1 sm:gap-2">

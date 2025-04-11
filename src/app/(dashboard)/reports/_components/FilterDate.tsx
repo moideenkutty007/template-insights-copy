@@ -1,11 +1,5 @@
 import { Label } from "@/components/Label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/Select"
+import { Select } from "@/components/SelectWrapper"
 import { useQueryState } from "nuqs"
 import { DEFAULT_RANGE, RANGE_DAYS, RANGE_LABELS, RangeKey } from "./dateRanges"
 
@@ -27,17 +21,16 @@ const FilterDate = () => {
       <Label htmlFor="date-range" className="font-medium">
         Date Range
       </Label>
-      <Select value={range} onValueChange={handleValueChange}>
-        <SelectTrigger id="date-range" className="w-full md:w-36">
-          <SelectValue placeholder="Select" />
-        </SelectTrigger>
-        <SelectContent align="end">
-          {Object.entries(RANGE_LABELS).map(([value, label]) => (
-            <SelectItem key={value} value={value}>
-              {label}
-            </SelectItem>
-          ))}
-        </SelectContent>
+      <Select 
+        value={range} 
+        onValueChange={handleValueChange}
+        className="w-full md:w-36"
+      >
+        {Object.entries(RANGE_LABELS).map(([value, label]) => (
+          <Select.Item key={value} value={value}>
+            {label}
+          </Select.Item>
+        ))}
       </Select>
     </div>
   )

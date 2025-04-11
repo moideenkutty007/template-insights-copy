@@ -1,11 +1,5 @@
 import { Label } from "@/components/Label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/Select"
+import { Select } from "@/components/SelectWrapper"
 import { expense_statuses } from "@/data/schema"
 import { cx } from "@/lib/utils"
 import { useQueryState } from "nuqs"
@@ -40,30 +34,29 @@ function FilterExpenseStatus() {
       <Label htmlFor="expense-filter" className="font-medium">
         Expense Status
       </Label>
-      <Select value={status} onValueChange={handleValueChange}>
-        <SelectTrigger id="expense-filter" className="mt-2 w-full md:w-44">
-          <SelectValue placeholder="Select status" />
-        </SelectTrigger>
-        <SelectContent align="end">
-          <SelectItem key="all" value="all">
-            All
-          </SelectItem>
-          {expense_statuses.map((status) => (
-            <SelectItem key={status.value} value={status.value}>
-              <div className="flex items-center gap-x-2.5">
-                <span
-                  className={cx(
-                    statusColorMap[status.value] ||
-                      "bg-gray-600 dark:bg-gray-500",
-                    "inline-block size-2 shrink-0 rounded-full",
-                  )}
-                  aria-hidden="true"
-                />
-                {status.label}
-              </div>
-            </SelectItem>
-          ))}
-        </SelectContent>
+      <Select 
+        value={status} 
+        onValueChange={handleValueChange}
+        className="mt-2 w-full md:w-44"
+      >
+        <Select.Item key="all" value="all">
+          All
+        </Select.Item>
+        {expense_statuses.map((status) => (
+          <Select.Item key={status.value} value={status.value}>
+            <div className="flex items-center gap-x-2.5">
+              <span
+                className={cx(
+                  statusColorMap[status.value] ||
+                    "bg-gray-600 dark:bg-gray-500",
+                  "inline-block size-2 shrink-0 rounded-full",
+                )}
+                aria-hidden="true"
+              />
+              {status.label}
+            </div>
+          </Select.Item>
+        ))}
       </Select>
     </div>
   )

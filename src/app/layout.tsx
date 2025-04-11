@@ -7,17 +7,17 @@ import "./globals.css"
 import { siteConfig } from "./siteConfig"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yoururl.com"),
+  metadataBase: new URL(siteConfig.url),
   title: siteConfig.name,
   description: siteConfig.description,
-  keywords: [],
+  keywords: ["team activity", "capacity management", "employee efficiency", "project profitability", "reporting"],
   authors: [
     {
-      name: "yourname",
-      url: "",
+      name: "Value Added Vault",
+      url: siteConfig.url,
     },
   ],
-  creator: "yourname",
+  creator: "Value Added Vault",
   openGraph: {
     type: "website",
     locale: "en_US",
